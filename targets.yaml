@@ -1,0 +1,63 @@
+# Infrastructure Health Monitor - Target Configuration
+# Define all hosts and services to monitor
+
+targets:
+  # Ping checks (ICMP)
+  - name: "Google DNS"
+    type: "ping"
+    host: "8.8.8.8"
+    enabled: true
+  
+  - name: "Cloudflare DNS"
+    type: "ping"
+    host: "1.1.1.1"
+    enabled: true
+  
+  - name: "Local Gateway"
+    type: "ping"
+    host: "192.168.1.1"
+    enabled: false  # Disable if not applicable
+  
+  # Port checks (TCP)
+  - name: "Google HTTPS"
+    type: "port"
+    host: "www.google.com"
+    port: 443
+    enabled: true
+  
+  - name: "Local SSH"
+    type: "port"
+    host: "localhost"
+    port: 22
+    enabled: false
+  
+  - name: "Database Server"
+    type: "port"
+    host: "localhost"
+    port: 5432
+    enabled: false
+  
+  # HTTP/HTTPS checks
+  - name: "Google Homepage"
+    type: "http"
+    url: "https://www.google.com"
+    expected_status: 200
+    enabled: true
+  
+  - name: "GitHub API"
+    type: "http"
+    url: "https://api.github.com"
+    expected_status: 200
+    enabled: true
+  
+  - name: "Example API Endpoint"
+    type: "http"
+    url: "https://jsonplaceholder.typicode.com/posts/1"
+    expected_status: 200
+    enabled: true
+  
+  - name: "Local Web Server"
+    type: "http"
+    url: "http://localhost:8080"
+    expected_status: 200
+    enabled: false
