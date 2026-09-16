@@ -49,7 +49,9 @@ logs/
 Thumbs.db
 
 # Project specific
-reports/
+# Ignore generated report files (but not src/reports/ folder)
+/reports/
 *.csv
 *.json
 !targets.yaml
+!targets-*.yaml
