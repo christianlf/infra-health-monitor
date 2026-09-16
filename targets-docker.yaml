@@ -1,0 +1,55 @@
+# targets-docker.yaml
+# Exemplo de configuração para testar com containers Docker locais
+# Antes de usar: docker-compose -f docker-compose-test.yml up -d
+
+targets:
+  # ============================================
+  # Localhost
+  # ============================================
+  - name: Localhost Ping
+    type: ping
+    host: 127.0.0.1
+  
+  # ============================================
+  # Containers Docker (HTTP)
+  # ============================================
+  - name: Nginx Web Server
+    type: http
+    host: http://localhost:8080
+    expected_status: 200
+    
+  - name: Apache Web Server
+    type: http
+    host: http://localhost:8081
+    expected_status: 200
+  
+  # ============================================
+  # Containers Docker (TCP Ports)
+  # ============================================
+  - name: Nginx Port
+    type: port
+    host: localhost
+    port: 8080
+  
+  - name: Apache Port
+    type: port
+    host: localhost
+    port: 8081
+    
+  - name: PostgreSQL Port
+    type: port
+    host: localhost
+    port: 5432
+    
+  - name: Redis Port
+    type: port
+    host: localhost
+    port: 6379
+  
+  # ============================================
+  # Teste de Falha (descomente após docker up)
+  # ============================================
+  # Para testar alertas, execute:
+  # docker stop test-webserver
+  # Aguarde 30s e veja o alerta no alerts.log
+  # Depois: docker start test-webserver

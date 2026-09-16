@@ -42,6 +42,34 @@ Este documento contém:
 
 ---
 
+## 🧪 Guia de Testes Locais
+
+**Quer testar o projeto em casa sem infraestrutura corporativa?**
+
+**📘 [Testing Guide - Como Testar em Casa](./TESTING_GUIDE.md)**
+
+Este guia contém:
+- ✅ **3 formas de testar:** Alvos públicos, Docker local, Cloud gratuita
+- 🐳 **Docker Compose pronto:** 4 containers para simular servidores
+- 📋 **Arquivos de configuração:** `targets-public.yaml`, `targets-docker.yaml`
+- 🎬 **Roteiros de demonstração:** Scripts prontos para entrevistas
+- 📸 **Screenshots essenciais:** O que capturar para o portfolio
+- 🎓 **Perguntas de entrevista:** Respostas prontas sobre testes
+
+**Quick Start:**
+```bash
+# Testar com alvos públicos (5 minutos)
+cp targets-public.yaml targets.yaml
+python main.py check
+
+# Testar com Docker (15 minutos)
+docker-compose -f docker-compose-test.yml up -d
+cp targets-docker.yaml targets.yaml
+python main.py monitor --interval 10
+```
+
+---
+
 ## 🎯 Visão Geral
 
 O **Infrastructure Health Monitor** é uma solução completa para monitoramento proativo de infraestrutura de TI. Ele permite que equipes de suporte e operações automatizem verificações de disponibilidade, meçam latência e respondam rapidamente a incidentes através de alertas configuráveis.

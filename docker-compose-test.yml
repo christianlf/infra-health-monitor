@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  # Servidor web Nginx (porta 8080)
+  webserver:
+    image: nginx:alpine
+    ports:
+      - "8080:80"
+    container_name: test-webserver
+    restart: unless-stopped
+  
+  # Servidor web Apache (porta 8081)
+  apache:
+    image: httpd:alpine
+    ports:
+      - "8081:80"
+    container_name: test-apache
+    restart: unless-stopped
+  
+  # Banco PostgreSQL (porta 5432)
+  database:
+    image: postgres:alpine
+    environment:
+      POSTGRES_PASSWORD: test123
+      POSTGRES_USER: testuser
+      POSTGRES_DB: testdb
+    ports:
+      - "5432:5432"
+    container_name: test-database
+    restart: unless-stopped
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+  
+  # Redis (porta 6379)
+  cache:
+    image: redis:alpine
+    ports:
+      - "6379:6379"
+    container_name: test-redis
+    restart: unless-stopped
+
+volumes:
+  postgres-data:

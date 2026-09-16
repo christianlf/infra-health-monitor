@@ -1,0 +1,79 @@
+# targets-public.yaml
+# Exemplo de configuração para testar o Infra Health Monitor
+# com alvos públicos (não precisa de infraestrutura corporativa)
+
+targets:
+  # ============================================
+  # DNS Públicos (Ping)
+  # ============================================
+  - name: Google DNS
+    type: ping
+    host: 8.8.8.8
+    
+  - name: Cloudflare DNS
+    type: ping
+    host: 1.1.1.1
+  
+  - name: Quad9 DNS
+    type: ping
+    host: 9.9.9.9
+  
+  # ============================================
+  # Sites Públicos (HTTP)
+  # ============================================
+  - name: GitHub
+    type: http
+    host: https://github.com
+    expected_status: 200
+    
+  - name: Google
+    type: http
+    host: https://www.google.com
+    expected_status: 200
+  
+  - name: Stack Overflow
+    type: http
+    host: https://stackoverflow.com
+    expected_status: 200
+  
+  - name: Python.org
+    type: http
+    host: https://www.python.org
+    expected_status: 200
+  
+  # ============================================
+  # Portas TCP Públicas
+  # ============================================
+  - name: GitHub SSH
+    type: port
+    host: github.com
+    port: 22
+    
+  - name: Google HTTPS
+    type: port
+    host: google.com
+    port: 443
+  
+  - name: Cloudflare HTTPS
+    type: port
+    host: cloudflare.com
+    port: 443
+  
+  # ============================================
+  # Alvos Inválidos (para testar alertas)
+  # ============================================
+  # Descomente para testar retry logic e alertas
+  
+  # - name: Host Inexistente
+  #   type: ping
+  #   host: 192.0.2.999
+  
+  # - name: Site Inválido
+  #   type: http
+  #   host: https://este-site-nao-existe-12345.com
+  #   expected_status: 200
+  
+  # - name: Porta Fechada
+  #   type: port
+  #   host: google.com
+  #   port: 9999
