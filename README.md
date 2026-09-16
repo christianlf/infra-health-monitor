@@ -46,9 +46,10 @@ Este documento contém:
 
 **Quer testar o projeto em casa sem infraestrutura corporativa?**
 
-**📘 [Testing Guide - Como Testar em Casa](./TESTING_GUIDE.md)**
+**📘 [Testing Guide - Como Testar em Casa](./TESTING_GUIDE.md)**  
+**🪟 [Windows Guide - Guia Específico para Windows](./WINDOWS_GUIDE.md)**
 
-Este guia contém:
+### Testing Guide (Linux/Mac/Windows):
 - ✅ **3 formas de testar:** Alvos públicos, Docker local, Cloud gratuita
 - 🐳 **Docker Compose pronto:** 4 containers para simular servidores
 - 📋 **Arquivos de configuração:** `targets-public.yaml`, `targets-docker.yaml`
@@ -56,7 +57,13 @@ Este guia contém:
 - 📸 **Screenshots essenciais:** O que capturar para o portfolio
 - 🎓 **Perguntas de entrevista:** Respostas prontas sobre testes
 
-**Quick Start:**
+### Windows Guide:
+- 🪟 **Comandos específicos:** PowerShell, CMD, ativação de venv
+- 🛠️ **Troubleshooting:** Erros comuns e soluções
+- 📋 **Instalação passo a passo:** Python, Docker, dependências
+- 🎯 **Quick Commands:** Scripts prontos para copiar e colar
+
+**Quick Start (Linux/Mac):**
 ```bash
 # Testar com alvos públicos (5 minutos)
 cp targets-public.yaml targets.yaml
@@ -65,6 +72,18 @@ python main.py check
 # Testar com Docker (15 minutos)
 docker-compose -f docker-compose-test.yml up -d
 cp targets-docker.yaml targets.yaml
+python main.py monitor --interval 10
+```
+
+**Quick Start (Windows PowerShell):**
+```powershell
+# Testar com alvos públicos (5 minutos)
+copy targets-public.yaml targets.yaml
+python main.py check
+
+# Testar com Docker (15 minutos)
+docker-compose -f docker-compose-test.yml up -d
+copy targets-docker.yaml targets.yaml
 python main.py monitor --interval 10
 ```
 
