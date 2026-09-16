@@ -23,6 +23,25 @@ Uma ferramenta de linha de comando em Python que realiza verificações automát
 - [Contribuindo](#contribuindo)
 - [Licença](#licença)
 
+---
+
+## 📚 Documentação Técnica Avançada
+
+Para uma análise técnica aprofundada do projeto, incluindo decisões arquiteturais, trade-offs de engenharia, análise de segurança e roadmap de evolução, consulte:
+
+**📄 [Technical Case Study & Architecture Review](./TECHNICAL_CASE_STUDY.md)**  
+**📥 [Download PDF](./TECHNICAL_CASE_STUDY.pdf)**
+
+Este documento contém:
+- Análise completa de decisões arquiteturais
+- Implementação de resiliência (retry logic, exponential backoff)
+- Análise de segurança (command injection prevention, input sanitization)
+- Performance optimization (parallel execution)
+- Defense Playbook com respostas técnicas para entrevistas
+- Roadmap de evolução (v2.1-v4.0)
+
+---
+
 ## 🎯 Visão Geral
 
 O **Infrastructure Health Monitor** é uma solução completa para monitoramento proativo de infraestrutura de TI. Ele permite que equipes de suporte e operações automatizem verificações de disponibilidade, meçam latência e respondam rapidamente a incidentes através de alertas configuráveis.
