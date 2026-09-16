@@ -23,13 +23,20 @@ class Config:
         self.log_level: str = os.getenv('LOG_LEVEL', 'INFO')
         self.alert_webhook_url: Optional[str] = os.getenv('ALERT_WEBHOOK_URL')
         
+        # Retry logic configuration
+        self.max_retries: int = int(os.getenv('MAX_RETRIES', '3'))
+        self.retry_delay: float = float(os.getenv('RETRY_DELAY', '1.0'))
+        
     def __repr__(self) -> str:
         """String representation of configuration (hiding sensitive data)."""
+        webhook_status = "configured" if self.alert_webhook_url else "not configured"
         return (
             f"Config(timeout={self.default_timeout}, "
             f"alert_threshold={self.alert_threshold}, "
+            f"max_retries={self.max_retries}, "
             f"database={self.database_path}, "
-            f"log_level={self.log_level})"
+            f"log_level={self.log_level}, "
+            f"webhook={webhook_status})"
         )
 
 
