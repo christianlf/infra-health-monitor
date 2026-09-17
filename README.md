@@ -2,10 +2,23 @@
 
 ![Python](https://img.shields.io/badge/python-3.10+-blue.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
+![Version](https://img.shields.io/badge/version-2.0-success.svg)
 
-**Automação de Monitoramento de Saúde de Infraestrutura Corporativa**
+**Automação de Monitoramento de Saúde de Infraestrutura Corporativa com AI**
 
 Uma ferramenta de linha de comando em Python que realiza verificações automáticas de saúde de infraestrutura de TI (servidores, endpoints de rede, serviços web) e gera relatórios e alertas detalhados.
+
+## 🆕 **Versão 2.0 - Novas Funcionalidades!**
+
+✨ **5 Recursos Novos Implementados:**
+
+1. 📊 **Web Dashboard** - Interface HTML em tempo real com atualizações automáticas
+2. 📈 **Prometheus Integration** - Métricas para Grafana e monitoramento enterprise
+3. 🤖 **AI Failure Prediction** - Machine Learning prevê falhas ANTES de acontecerem
+4. 📧 **Email Notifications** - Alertas profissionais via SMTP (Gmail, Office 365)
+5. 🔒 **SSL Certificate Monitoring** - Rastreamento de expiração de certificados
+
+**📘 [Ver FEATURES.md para detalhes completos](./FEATURES.md)**
 
 ## 📋 Índice
 

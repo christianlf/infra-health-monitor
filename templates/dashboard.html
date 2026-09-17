@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infrastructure Health Monitor - Dashboard</title>
+    <link rel="stylesheet" href="/static/css/dashboard.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🏥 Infrastructure Health Monitor</h1>
+            <div class="header-stats">
+                <div class="stat-card">
+                    <span class="stat-label">Overall Uptime</span>
+                    <span class="stat-value" id="overall-uptime">---%</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Total Checks</span>
+                    <span class="stat-value" id="total-checks">---</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Targets</span>
+                    <span class="stat-value" id="total-targets">---</span>
+                </div>
+            </div>
+            <div class="last-updated">
+                Last updated: <span id="last-updated">--:--:--</span>
+            </div>
+        </header>
+
+        <main>
+            <section class="targets-grid" id="targets-grid">
+                <!-- Target cards will be inserted here -->
+            </section>
+        </main>
+    </div>
+
+    <script src="/static/js/dashboard.js"></script>
+</body>
+</html>
